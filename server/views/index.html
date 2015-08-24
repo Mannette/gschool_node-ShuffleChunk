@@ -8,7 +8,20 @@
   <div class="container">
 
     <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+
+      <form class="form-inline" method="post" action="/">
+        <input class="form-control" name="people" type="string" placeholder="Name(s)" required>
+        <input class="form-control" name="number" type="number" placeholder="Chunks" required>
+        <button type="submit" class="btn btn-danger">Get Groups!</button>
+      </form>
+
+      <ol>
+      {% for result in results %}
+        <li>
+          {{ result }}
+        </li>
+      {% endfor %}
+      </ol>
 
   </div>
 
